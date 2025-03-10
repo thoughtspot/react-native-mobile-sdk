@@ -18,6 +18,5 @@ export const enum ERROR_MESSAGE {
 
 export const notifyErrorSDK = (error: Error, onErrorSDK?: ErrorCallback, errorMessage?: ERROR_MESSAGE) => {
     onErrorSDK?.(error);
-    console.error(error, errorMessage);
     return;
 }

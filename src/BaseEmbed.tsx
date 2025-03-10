@@ -116,11 +116,11 @@ export const BaseEmbed = forwardRef<TSEmbedRef, BaseEmbedProps>(
         {...DEFAULT_WEBVIEW_CONFIG}
         onError={(syntheticEvent) => {
           const { nativeEvent } = syntheticEvent;
-          console.warn("[BaseEmbed] WebView error: ", nativeEvent);
+          console.warn("WebView error: ", nativeEvent);
         }}
         onHttpError={(syntheticEvent) => {
           const { nativeEvent } = syntheticEvent;
-          console.warn("[BaseEmbed] HTTP error: ", nativeEvent);
+          console.warn("HTTP error: ", nativeEvent);
         }}
         style={{ flex: 1 }}
       />
