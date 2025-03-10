@@ -1,5 +1,5 @@
 {
-  "name": "react-native-embed-sdk",
+  "name": "@thoughtspot/react-native-embed-sdk",
   "version": "0.0.0-alpha-1",
   "description": "React Native SDK for Embedding TS",
   "main": "dist/index.cjs.js",

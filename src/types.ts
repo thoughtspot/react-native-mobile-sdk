@@ -5257,6 +5257,7 @@ export interface LiveboardViewConfig
      * ```
      */
     fullHeight?: boolean;
+    defaultActionsDisabled?: boolean;
     /**
      * This is the minimum height(in pixels) for a full-height Liveboard.
      * Setting this height helps resolve issues with empty Liveboards and
