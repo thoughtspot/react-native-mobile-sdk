@@ -27,7 +27,7 @@ export interface TSEmbedRef {
 }
 
 export const BaseEmbed = forwardRef<TSEmbedRef, BaseEmbedProps>(
-  (props, ref) => {
+  (props: any, ref: any) => {
     const webViewRef = useRef<WebView>(null);
     const [embedBridge, setEmbedBridge] = useState<EmbedBridge | null>(null);
     const [vercelShellLoaded, setVercelShellLoaded] = useState(false);
@@ -48,7 +48,7 @@ export const BaseEmbed = forwardRef<TSEmbedRef, BaseEmbedProps>(
           newViewConfig[key] = props[key];
         }
       });
-      setPendingHandlers((prev) => [...prev, ...newPendingHandlers]);
+      setPendingHandlers((prev: any) => [...prev, ...newPendingHandlers]);
       setViewConfig(newViewConfig);
     }, [props]);
 
@@ -88,7 +88,7 @@ export const BaseEmbed = forwardRef<TSEmbedRef, BaseEmbedProps>(
 
     const handleInitVercelShell = () => {
       setVercelShellLoaded(true);
-      const newEmbedBridge = new EmbedBridge(webViewRef);
+      const newEmbedBridge = new EmbedBridge(webViewRef as any);
       setEmbedBridge(newEmbedBridge);
 
       pendingHandlers.forEach(([eventName, callback]) => {
