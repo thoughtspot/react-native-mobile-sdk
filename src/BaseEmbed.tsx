@@ -4,7 +4,6 @@ import React, {
   useImperativeHandle,
   forwardRef,
   useMemo,
-  useState,
   useCallback,
 } from "react";
 import { WebView, WebViewMessageEvent } from "react-native-webview";
@@ -29,11 +28,11 @@ export interface TSEmbedRef {
 export const BaseEmbed = forwardRef<TSEmbedRef, BaseEmbedProps>(
   (props: any, ref: any) => {
     const webViewRef = useRef<WebView>(null);
-    const [embedBridge, setEmbedBridge] = useState<EmbedBridge | null>(null);
-    const [vercelShellLoaded, setVercelShellLoaded] = useState(false);
-    const [viewConfig, setViewConfig] = useState<Record<string, any>>({});
-    const [pendingHandlers, setPendingHandlers] = useState<Array<[string, Function]>>([]);
-    const [isWebViewReady, setIsWebViewReady] = useState(false);
+    const [embedBridge, setEmbedBridge] = React.useState<EmbedBridge | null>(null);
+    const [vercelShellLoaded, setVercelShellLoaded] = React.useState(false);
+    const [viewConfig, setViewConfig] = React.useState<Record<string, any>>({});
+    const [pendingHandlers, setPendingHandlers] = React.useState<Array<[string, Function]>>([]);
+    const [isWebViewReady, setIsWebViewReady] = React.useState(false);
 
     useDeepCompareEffect(() => {
       const newViewConfig: Record<string, any> = {};
@@ -114,6 +113,7 @@ export const BaseEmbed = forwardRef<TSEmbedRef, BaseEmbedProps>(
     return (
       <WebView
         ref={webViewRef}
+        testID={'test-webview'}
         source={{ uri: Constants.VERCEL_SHELL_URL }}
         onMessage={handleMessage}
         {...DEFAULT_WEBVIEW_CONFIG}
