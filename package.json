@@ -1,7 +1,7 @@
 {
   "name": "@thoughtspot/react-native-embed-sdk",
   "version": "0.0.1",
-  "description": "React Native SDK for Embedding TS",
+  "description": "React Native Embed SDK for Embedding Thoughtspot in your react-native mobile applications.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",

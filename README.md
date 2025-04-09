@@ -1,8 +1,8 @@
-# React Native Mobile SDK
+# React Native Embed SDK
 
 ## Overview
 
-The React Native Mobile SDK is a library that allows you to embed a Thoughtspot component in your mobile application.
+The React Native Embed SDK is a library that allows you to embed a Thoughtspot component in your mobile application.
 
 
 ## Quick Start
