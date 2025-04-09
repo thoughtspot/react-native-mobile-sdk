@@ -13,7 +13,7 @@ The ThoughtSpot Embed SDK allows you to embed the ThoughtSpot liveboard embed ex
 
 ```js
 // NPM
-import { LiveboardEmbed, AuthType, init } from '@thoughtspot/react-native-mobile-sdk';
+import { LiveboardEmbed, AuthType, init } from '@thoughtspot/react-native-embed-sdk';
 
 init({
     thoughtSpotHost: '<%=tshost%>',
@@ -50,11 +50,11 @@ $ npm yalc publish
 Use this SDK package in your project using 
 
 ```
-$ npm yalc add react-native-mobile-sdk
+$ npm yalc add react-native-embed-sdk
 ```
 Once added this will link your sdk.
 
 <br/>
 <br/>
 
-React-Native-Mobile-SDK, © ThoughtSpot, Inc. 2025
+React-Native-Embed-SDK, © ThoughtSpot, Inc. 2025
