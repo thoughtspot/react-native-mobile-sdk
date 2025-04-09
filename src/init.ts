@@ -10,10 +10,3 @@ export const init = (embedConfig: any) => {
   authFunctionCache = embedConfig.getAuthToken;
   embedConfigCache.getTokenFromSDK = true;
 };
-
-export const getEmbedConfig = () => {
-  if (!embedConfigCache) {
-    throw new Error('Thoughtspot not initialized');
-  }
-  return embedConfigCache;
-}

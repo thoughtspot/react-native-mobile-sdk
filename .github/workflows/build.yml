@@ -18,6 +18,12 @@ jobs:
           
       - name: Install dependencies
         run: npm ci
+
+      - name: Apply local patches
+        run: npx patch-package
+
+      - name: Run tests
+        run: npm run test
         
       - name: Build
         run: npm run build

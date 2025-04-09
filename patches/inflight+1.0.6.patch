@@ -1,0 +1,15 @@
+diff --git a/node_modules/inflight/inflight.js b/node_modules/inflight/inflight.js
+index 48202b3..fe21f50 100644
+--- a/node_modules/inflight/inflight.js
++++ b/node_modules/inflight/inflight.js
+@@ -39,7 +39,9 @@ function makeres (key) {
+           RES.apply(null, args)
+         })
+       } else {
+-        delete reqs[key]
++        setImmediate(() => {
++          if (reqs[key]) delete reqs[key];
++        }); 
+       }
+     }
+   })
