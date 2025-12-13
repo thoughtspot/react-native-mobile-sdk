@@ -1,6 +1,6 @@
 {
   "name": "@thoughtspot/react-native-embed-sdk",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "React Native Embed SDK for Embedding Thoughtspot in your react-native mobile applications.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-typescript": "^12.1.2",
     "@testing-library/react-native": "^13.2.0",
@@ -43,6 +44,11 @@
   "scripts": {
     "build": "rollup -c",
     "test": "jest --coverage"
+  },
+  "overrides": {
+    "tmp": ">=0.2.4",
+    "brace-expansion": "~1.1.12",
+    "inflight": ">=1.0.6"
   },
   "dependencies": {
     "use-deep-compare-effect": "^1.8.1"

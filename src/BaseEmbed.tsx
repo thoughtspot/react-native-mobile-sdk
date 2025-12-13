@@ -14,6 +14,7 @@ import { MSG_TYPE, DEFAULT_WEBVIEW_CONFIG } from './constants';
 import { ERROR_MESSAGE, notifyErrorSDK } from "./utils";
 import { ViewConfig, EmbedEventHandlers, EmbedEvent } from "./types";
 import useDeepCompareEffect from "use-deep-compare-effect"; 
+import { version } from "../package.json";
 
 interface BaseEmbedProps extends ViewConfig, EmbedEventHandlers {
   typeofEmbed: string;
@@ -60,6 +61,8 @@ export const BaseEmbed = forwardRef<TSEmbedRef, BaseEmbedProps>(
       const initMsg = {
         type: MSG_TYPE.INIT,
         payload: embedConfigCache,
+        sdkType: "react-native-embed-sdk",
+        version
       };
 
       bridge.sendMessage(initMsg);
