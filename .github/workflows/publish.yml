@@ -13,6 +13,10 @@ on:
           - major
           - current
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -24,6 +28,9 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Update npm
+        run: npm install -g npm@latest # latest version of npm for OIDC
 
       - name: Install dependencies
         run: npm ci
@@ -41,5 +48,3 @@ jobs:
             npm version ${{ inputs.version }}
             npm publish --access public
           fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
